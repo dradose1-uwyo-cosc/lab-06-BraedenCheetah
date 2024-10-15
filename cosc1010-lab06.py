@@ -1,13 +1,9 @@
-# Your Name Here
+# Braeden Kirby
 # UWYO COSC 1010
-# Submission Date
+# S10/15/2024
 # Lab 06
-# Lab Section: 
+# Lab Section: 13
 # Sources, people worked with, help given to: 
-# your
-# comments
-# here
-
 
 random_string = """
 jppamiqxegokaizvkyawwurhewtcxohryzptznyuedhhmawpic
@@ -65,7 +61,7 @@ random_string = random_string.replace("\n","") #remove all newline characters
 print(len(random_string)) # Print out the size for reference 
 
 # Above is a string with 2500 characters.
-# Create a program that goes through and counts the occurrence of each character, excluding \n using a  dictionary
+# Create a program that goes through and counts the occurrence of each character, excluding \n using a dictionary
 # Output each letter and its corresponding occurrence in alphabetical order
 # Output which letter occurred the most 
 # Output which letter occurred the least 
@@ -83,18 +79,61 @@ print(len(random_string)) # Print out the size for reference
 #Load all the elements into a dictionary
 #Will need to first declare a dictionary 
 
+character_count = {}
+
 # Output: each letter and its corresponding occurrence in alphabetical order
 
+#I will declare a the length of the random string to be a variable so that I can use 
+
+string_length = len(random_string)
+
+#I will make a for and if statement in order to find the character counts 
+
+for character in random_string:
+    if character in character_count:
+        character_count[character] += 1
+    else: 
+        character_count[character] = 1
+
+#I will use the max and min statemnts to find the most and most occured characters
+
+most_occurred = max(character_count, key = character_count.get)
+
+least_occurred = min(character_count, key = character_count.get)
+
+#I will find out the percentage of each character occured
+
+character_percentage = {character: (count / string_length) * 100 for character, count in character_count.items()} 
+
+sorted_characters = sorted(character_count.keys())
+
 print("*"*75)
+
+#I will set up a for statement to show the occurences of each character
+
+print("For the Occurences of Each Character:")
+
+for character in sorted_characters:
+    print(f"'{character}' occurs {character_count[character]} times.")
+
 # Output which letter occurred the most 
 
-most_occurred = ""
-least_occurred = ""
+#I will use the variables to show the values that are set in the dictionaries and the for statements
 
-print(f"The letter that occurred the most is {most_occurred}")
 print("*"*75)
+print(f"The letter that occurrs the most is {most_occurred}, occurring {character_count[most_occurred]} times.")
+print("*"*75)
+
 # Output which letter occurred the least 
-print(f"The letter that occurred the most is {least_occurred}")
+
+print(f"The letter that occurrs the most is {least_occurred}, occurring {character_count[least_occurred]} times.")
 print("*"*75)
 
 # Output what the percentage of the string each character is, again in alphabetical
+
+#I will set up a for statement to output the percentage that each character takes up in the string
+
+print("As for the Precentage that each Character Takes Up:")
+
+for character in sorted_characters:
+    print(f"'{character}' takes up {character_percentage[character]:.2f}% of the string.")
