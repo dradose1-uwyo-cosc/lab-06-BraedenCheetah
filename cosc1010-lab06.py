@@ -3,7 +3,7 @@
 # S10/15/2024
 # Lab 06
 # Lab Section: 13
-# Sources, people worked with, help given to: 
+# Sources, people worked with, help given to: Matthew Curl
 
 random_string = """
 jppamiqxegokaizvkyawwurhewtcxohryzptznyuedhhmawpic
